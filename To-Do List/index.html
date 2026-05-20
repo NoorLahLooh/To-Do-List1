@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ===== BACKGROUND ===== -->
+  <div class="bg-gradient"></div>
+
+  <!-- ===== WRAPPER ===== -->
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header__icon">✓</div>
+      <div>
+        <h1 class="header__title">Task Manager</h1>
+        <p class="header__subtitle">Organize your work and get things done</p>
+      </div>
+    </header>
+
+    <!-- MAIN CARD -->
+    <main class="card">
+
+      <!-- ADD TASK SECTION -->
+      <section class="add-task">
+        <input
+          type="text"
+          id="taskInput"
+          class="input input--title"
+          placeholder="What needs to be done?"
+        />
+        <select id="prioritySelect" class="input input--select">
+          <option value="high">🔴 High</option>
+          <option value="medium" selected>🟡 Medium</option>
+          <option value="low">🟢 Low</option>
+        </select>
+        <button id="addBtn" class="btn btn--add">+ Add Task</button>
+
+        <textarea
+          id="descInput"
+          class="input input--desc"
+          placeholder="Add a description (optional)"
+          rows="3"
+        ></textarea>
+      </section>
+
+      <!-- STATS -->
+      <section class="stats">
+        <div class="stat">
+          <span class="stat__number" id="totalCount">0</span>
+          <span class="stat__label">Total Tasks</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" id="activeCount">0</span>
+          <span class="stat__label">Active</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" id="completedCount">0</span>
+          <span class="stat__label">Completed</span>
+        </div>
+      </section>
+
+      <!-- FILTERS -->
+      <section class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+        <button class="filter-btn" data-filter="high">🔴 High</button>
+        <button class="filter-btn" data-filter="medium">🟡 Medium</button>
+        <button class="filter-btn" data-filter="low">🟢 Low</button>
+      </section>
+
+      <!-- TASK LIST -->
+      <section class="task-list" id="taskList">
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState">
+          <div class="empty-state__icon">📋</div>
+          <h3 class="empty-state__title">No tasks yet</h3>
+          <p class="empty-state__sub">Add a task above to get started!</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
